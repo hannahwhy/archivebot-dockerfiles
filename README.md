@@ -31,3 +31,11 @@ docker run -e PIPELINE_NAME=some-pipeline-name \
   --link redis
   -i [IMAGE ID]
 ```
+
+If you were planning on starting and stopping many pipelines, you could also do this by setting up a Docker network.
+
+[TODO]
+
+# The `uploader` Dockerfile
+
+[TODO]
