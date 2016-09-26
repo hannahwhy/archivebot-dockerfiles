@@ -6,6 +6,8 @@ RUN apt-get install -yqq fontconfig
 
 WORKDIR /tmp
 RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+RUN echo '86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f  phantomjs-2.1.1-linux-x86_64.tar.bz2' > /tmp/sha256sums
+RUN sha256sum -c sha256sums
 RUN tar jxf phantomjs-2.1.1-linux-x86_64.tar.bz2
 RUN mv /tmp/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
 RUN adduser --home /home/archivebot --shell /bin/bash --uid 1000 archivebot --quiet --disabled-password
