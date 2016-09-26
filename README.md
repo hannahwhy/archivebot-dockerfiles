@@ -4,6 +4,17 @@ This repository contains Dockerfiles for running [Archive Team ArchiveBot](https
 
 At present, this repository contains a Dockerfile for ArchiveBot's downloader pipeline.
 
+# CoreOS warning: disable reboot-on-update
+
+The default update behavior of many CoreOS installations is to reboot after applying CoreOS updates.  This is a good idea, but it is unfortunately incompatible with the ArchiveBot pipeline, as there is currently no way to resume an interrupted job.  For now, you will need to configure the CoreOS installation to not reboot on update.  If you use `cloud-config`, you can set that putting the following YAML block in your `cloud-config` file:
+
+```yaml
+#cloud-config
+coreos:
+  update:
+    reboot-strategy: off
+```
+
 # The `pipeline` Dockerfile
 
 The `pipeline` Dockerfile runs an instance of ArchiveBot's downloader program.  The downloader is configured to run one job at at time.  (If you want to handle multiple jobs, you can adjust the Dockerfile or just run multiple `pipeline` containers.)  
