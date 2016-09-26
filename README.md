@@ -1,6 +1,6 @@
 # Dockerfiles for ArchiveBot components
 
-This repository contains Dockerfiles for running [Archive Team ArchiveBot](https://github.com/ArchiveTeam/ArchiveBot) components.  These Dockerfiles were developed with the goal of running ArchiveBot components on [CoreOS](https://coreos.com/), but should be applicable to any Docker deployment.
+This repository contains Dockerfiles for running [Archive Team ArchiveBot](https://github.com/ArchiveTeam/ArchiveBot) components.  These Dockerfiles were developed with the goal of running ArchiveBot components on [CoreOS](https://coreos.com/).
 
 At present, this repository contains a Dockerfile for ArchiveBot's downloader pipeline.
 
