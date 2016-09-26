@@ -24,8 +24,10 @@ The recommended way to do this is:
 Example:
 
 ```
+# this assumes the "redis" container already exists
 docker run -e PIPELINE_NAME=some-pipeline-name \
   -v /mnt/data/pipeline:/home/archivebot/ArchiveBot/pipeline/data \
   -v /mnt/data/warcs4fos:/home/archivebot/warcs4fos \
+  --link redis
   -i [IMAGE ID]
 ```
